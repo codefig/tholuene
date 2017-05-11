@@ -1,0 +1,34 @@
+<IfModule mod_rewrite.c>
+    
+    Options +FollowSymLinks 
+    Options +Indexes 
+
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-f 
+    RewriteCond %{REQUEST_FILENAME} !-d
+ 
+    #rewrite all starting with welcome to index.php
+    #RewriteRule ^welcome+$ admin/error.php
+    
+
+    RewriteRule ^timetable index.php
+    RewriteRule ^addcourse contact.php
+    RewriteRule ^viewcourses    about.php
+   
+
+    
+
+    #rewrite all signin to signin/index.php
+    #RewriteRule ^signin/?$  signin/index.php
+
+    #rewrite stating with pateints to patients/index.php
+    #RewriteRule ^patients/?$ patients/index.php
+    #RewriteRule ^admin/add  addpatient.php
+
+   
+    #RewriteRule ^adminlogin/$ admin/adminlogin.php
+    #RewriteRule ^adminlogin/action$ admin/action.php
+    #RewriteRule ^adminlogin/+ admin/error.php
+
+</IfModule>
